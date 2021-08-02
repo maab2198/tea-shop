@@ -1,4 +1,6 @@
 import styles from "./AvailableList.module.css";
+import Item from "./Product/Item";
+import CardWrapper from "../UI/Wrapper/CardWrapper";
 
 const DUMMY_MEALS = [
   {
@@ -28,10 +30,20 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableList = () => {
-  const productList = DUMMY_MEALS.map((item) => <li>{item.name}</li>);
+  const productList = DUMMY_MEALS.map((item) => (
+    <Item
+      key={item.id}
+      id={item.id}
+      name={item.name}
+      description={item.description}
+      price={item.price}
+    />
+  ));
   return (
     <section className={styles.products}>
-      <ul>{productList}</ul>
+      <CardWrapper>
+        <ul>{productList}</ul>
+      </CardWrapper>
     </section>
   );
 };
