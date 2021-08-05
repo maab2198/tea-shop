@@ -1,16 +1,26 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import styles from "./Cart.module.css";
 import Modal from "../UI/Portals/Modal";
 
+import CartContext from "./../store/cart-context";
+
 const Cart = (props) => {
-  const cartItems = [1, 2, 3].map((item) => <li>item</li>);
+  const cartCtx = useContext(CartContext);
+
+  const cartItems = cartCtx.items.map((item, id) => (
+    <li key={id}>
+      <h3>{item.name}</h3>
+      <b>{item.price + " "}</b>
+      <span>{item.amount}</span>
+    </li>
+  ));
 
   return (
     <Modal onClick={props.onClose}>
       <ul className={styles["cart-items"]}>{cartItems}</ul>
       <div className={styles.totals}>
         <span>Total Amount</span>
-        <span>35.55</span>
+        <span>{cartCtx.amount}</span>
       </div>
       <div className={styles.actions}>
         <button className={styles["button--order"]}>Order</button>

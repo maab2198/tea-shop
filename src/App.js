@@ -3,6 +3,8 @@ import Header from "./Layout/Header/Header.js";
 import Products from "./Products/Products.js";
 import Cart from "./Cart/Cart.js";
 
+import CartProvider from "./store/CartProvider";
+
 const App = () => {
   const [cartIsOpen, setCartIsOpen] = useState(false);
   const showCartHandler = () => {
@@ -12,13 +14,13 @@ const App = () => {
     setCartIsOpen(false);
   };
   return (
-    <Fragment>
+    <CartProvider>
       <Header onShowCart={showCartHandler} />
       <main>
         <Products />
       </main>
       {cartIsOpen && <Cart onClose={hideCartHandler} />}
-    </Fragment>
+    </CartProvider>
   );
 };
 
