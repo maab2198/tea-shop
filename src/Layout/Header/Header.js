@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import CartButton from "./CartButton";
 import mealImg from "../../assets/meals.jpeg";
 import style from "./Header.module.css";
