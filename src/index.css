@@ -1,15 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 body {
   margin: 0;
-  background-color: #3f3f3f;
+  background-color: #efefef;
+  background-image: url("assets/bg-river.png");
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  /* background-color: #cdced3;
+  background-position: 0 100%;
+  background-repeat: no-repeat; */
 }
 
+.main {
+  margin: 0 auto;
+  padding: 0 7rem;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  font-family: "Ma Shan Zheng", cursive;
+}

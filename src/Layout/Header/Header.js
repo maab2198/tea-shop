@@ -7,11 +7,17 @@ const Header = (props) => {
   return (
     <Fragment>
       <header className={style.header}>
-        <h1>ReactMeals</h1>
+        <h1>
+          茶馆
+          <span className={style.subtitle}> TeaShop </span>
+        </h1>
         <CartButton onClick={props.onShowCart} />
       </header>
       <div className={style["main-image"]}>
-        <img src={mealImg} alt="Table full of food" />
+        <img
+          src="https://cdn.orangenews.hk/common//202010/13193321atp4.jpg"
+          alt="Tea pot"
+        />
       </div>
     </Fragment>
   );

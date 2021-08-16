@@ -30,7 +30,7 @@ const ItemForm = (props) => {
           defaultValue: "1",
         }}
       />
-      <button>Add</button>
+      <button>Add To Cart</button>
       {!amountIsValid && <p>Please enter a valid amount greater then 1</p>}
     </form>
   );
