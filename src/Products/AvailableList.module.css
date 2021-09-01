@@ -20,6 +20,10 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.message {
+  text-align: center;
+}
+
 @keyframes products-appear {
   from {
     opacity: 0;
