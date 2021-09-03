@@ -1,16 +1,26 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useState } from "react";
 import styles from "./Cart.module.css";
 import Modal from "../UI/Portals/Modal";
 import CartItem from "./CartItem";
+import Checkout from "./Checkout";
 import CartContext from "./../store/cart-context";
 
 const Cart = (props) => {
+  const [showCheckout, setShowCheckout] = useState(false);
+  const showActions = !showCheckout;
   const cartCtx = useContext(CartContext);
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const isOrderValid = cartCtx.items.length > 0 ? true : false;
+
   const cartAddItemHandler = (item) => {
     cartCtx.addItem({ ...item, amount: 1 });
   };
+
+  const orderClickHandler = () => {
+    setShowCheckout(true);
+  };
+
+  const confirmClickHandler = () => {};
 
   const cartRemoveItemHandler = (id) => {
     cartCtx.removeItem(id);
@@ -34,14 +44,22 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
-      <div className={styles.actions}>
-        {isOrderValid && (
-          <button className={styles["button--order"]}>Order</button>
-        )}
-        <button className={styles["button--close"]} onClick={props.onClose}>
-          Close
-        </button>
-      </div>
+      {showCheckout && <Checkout onConfirmClick={confirmClickHandler} />}
+      {showActions && (
+        <div className={styles.actions}>
+          {isOrderValid && (
+            <button
+              className={styles["button--order"]}
+              onClick={orderClickHandler}
+            >
+              Order
+            </button>
+          )}
+          <button className={styles["button--close"]} onClick={props.onClose}>
+            Close
+          </button>
+        </div>
+      )}
     </Modal>
   );
 };

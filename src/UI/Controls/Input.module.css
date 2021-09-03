@@ -2,11 +2,13 @@
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  justify-content: center;
 }
 
 .input label {
   font-weight: bold;
   margin-right: 1rem;
+  width: 20%;
 }
 
 .input input {
@@ -15,4 +17,10 @@
   border: 1px solid #ccc;
   font: inherit;
   padding-left: 0.5rem;
+}
+
+.input input[type="text"],
+.input input[type="email"] {
+  width: 60%;
+  margin: 1rem;
 }
