@@ -20,8 +20,6 @@ const Cart = (props) => {
     setShowCheckout(true);
   };
 
-  const confirmClickHandler = () => {};
-
   const cartRemoveItemHandler = (id) => {
     cartCtx.removeItem(id);
   };
@@ -37,6 +35,19 @@ const Cart = (props) => {
     />
   ));
 
+  const actionsModal = (
+    <div className={styles.actions}>
+      {isOrderValid && (
+        <button className={styles["button--order"]} onClick={orderClickHandler}>
+          Order
+        </button>
+      )}
+      <button className={styles["button--close"]} onClick={props.onClose}>
+        Close
+      </button>
+    </div>
+  );
+
   return (
     <Modal onClick={props.onClose}>
       <ul className={styles["cart-items"]}>{cartItems}</ul>
@@ -44,22 +55,8 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
-      {showCheckout && <Checkout onConfirmClick={confirmClickHandler} />}
-      {showActions && (
-        <div className={styles.actions}>
-          {isOrderValid && (
-            <button
-              className={styles["button--order"]}
-              onClick={orderClickHandler}
-            >
-              Order
-            </button>
-          )}
-          <button className={styles["button--close"]} onClick={props.onClose}>
-            Close
-          </button>
-        </div>
-      )}
+      {showCheckout && <Checkout onCancel={props.onClose} />}
+      {showActions && actionsModal}
     </Modal>
   );
 };

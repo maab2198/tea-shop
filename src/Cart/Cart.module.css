@@ -2,7 +2,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 20rem;
+  max-height: 100%;
   overflow: auto;
 }
 
@@ -23,16 +23,16 @@
   font-family: "Ma Shan Zheng", cursive;
 
   cursor: pointer;
-  background-color: transparent;
 
   margin-left: 1rem;
 
-  color: #f6f6f6;
   font-size: 1.5rem;
   padding: 1rem 2rem;
 
   border: 3px solid #849aa5;
   box-shadow: inset 0 0 0 5px #f6f6f6;
+  background-color: #6e7e97;
+  color: #f6f6f6;
 }
 
 .actions button:hover,
@@ -43,13 +43,11 @@
   color: #24212e;
 }
 
-.actions .button--close {
+/* .actions .button--close {
   color: #24212e;
-}
+} */
 
 .actions .button--order {
-  background-color: #6e7e97;
-  color: #f6f6f6;
 }
 
 .form button {
