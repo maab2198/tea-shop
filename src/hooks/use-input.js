@@ -20,6 +20,7 @@ const useInput = (validationCheck) => {
   };
 
   return {
+    value,
     inputRef,
     valueIsValid,
     hasError,

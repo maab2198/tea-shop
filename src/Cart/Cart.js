@@ -23,6 +23,18 @@ const Cart = (props) => {
   const cartRemoveItemHandler = (id) => {
     cartCtx.removeItem(id);
   };
+  const formSubmitHander = (userData) => {
+    fetch(
+      "https://tea-order-app-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          user: userData,
+          orderItems: cartCtx.items,
+        }),
+      }
+    );
+  };
   const cartItems = cartCtx.items.map((item) => (
     <CartItem
       key={item.id}
@@ -55,7 +67,9 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
-      {showCheckout && <Checkout onCancel={props.onClose} />}
+      {showCheckout && (
+        <Checkout onSubmit={formSubmitHander} onCancel={props.onClose} />
+      )}
       {showActions && actionsModal}
     </Modal>
   );

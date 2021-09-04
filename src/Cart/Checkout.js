@@ -8,6 +8,7 @@ const isEmail = (val) => val && val.includes("@");
 
 const Checkout = (props) => {
   const {
+    value: nameValue,
     inputRef: nameInputRef,
     valueIsValid: nameIsValid,
     hasError: nameInputHasError,
@@ -17,6 +18,7 @@ const Checkout = (props) => {
   } = useInput(isNotEmpty);
 
   const {
+    value: cityValue,
     inputRef: cityInputRef,
     valueIsValid: cityIsValid,
     hasError: cityInputHasError,
@@ -26,6 +28,7 @@ const Checkout = (props) => {
   } = useInput(isNotEmpty);
 
   const {
+    value: streetValue,
     inputRef: streetInputRef,
     valueIsValid: streetIsValid,
     hasError: streetInputHasError,
@@ -35,6 +38,7 @@ const Checkout = (props) => {
   } = useInput(isNotEmpty);
 
   const {
+    value: emailValue,
     inputRef: emailInputRef,
     valueIsValid: emailIsValid,
     hasError: emailInputHasError,
@@ -44,6 +48,7 @@ const Checkout = (props) => {
   } = useInput(isEmail);
 
   const {
+    value: postValue,
     inputRef: postInputRef,
     valueIsValid: postIsValid,
     hasError: postInputHasError,
@@ -68,7 +73,13 @@ const Checkout = (props) => {
     if (!formIsValid) {
       console.log("form not Valid");
     } else {
-      console.log("form is valid");
+      props.onSubmit({
+        name: nameValue,
+        street: streetValue,
+        city: cityValue,
+        email: emailValue,
+        postal_code: postValue,
+      });
     }
 
     resetNameValue();
