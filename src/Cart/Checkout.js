@@ -159,7 +159,9 @@ const Checkout = (props) => {
         >
           Cancel
         </button>
-        <button className={styles.button}>Confirm</button>
+        <button disabled={!formIsValid} className={styles.button}>
+          Confirm
+        </button>
       </div>
     </form>
   );
