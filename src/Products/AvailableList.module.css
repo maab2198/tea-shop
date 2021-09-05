@@ -17,7 +17,12 @@
   box-shadow: inset 0 0 0 1rem #849aa5;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 768px) {
+  .products ul {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  }
 }
 
 .message {

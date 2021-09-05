@@ -1,7 +1,7 @@
 .button {
   background-color: #849aa5;
   color: #f6f6f6;
-  padding: 0.75rem 3rem;
+  padding: 0.5em 1.5em;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -21,6 +21,12 @@
   width: 1.35rem;
   height: 1.35rem;
   margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .icon {
+    display: none;
+  }
 }
 
 .badge {

@@ -8,6 +8,12 @@
   position: relative;
   color: #24212e;
 }
+
+@media (max-width: 768px) {
+  .product {
+    margin: 2rem 0;
+  }
+}
 .product .ch_title {
   margin: 0 0 0.5rem 0;
 

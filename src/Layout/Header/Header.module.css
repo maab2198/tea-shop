@@ -39,3 +39,17 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 450px) {
+  .header {
+    left: 0;
+    right: 0;
+    padding: 5px;
+  }
+  .header .ch_title {
+    display: none;
+  }
+  .main-image {
+    height: 100vh;
+  }
+}

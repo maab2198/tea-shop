@@ -27,6 +27,15 @@ body {
   padding: 0 7rem;
 }
 
+@media (max-width: 450px) {
+  body {
+    background-image: none;
+  }
+  .main {
+    padding: 0;
+  }
+}
+
 button {
   cursor: pointer;
   font: inherit;

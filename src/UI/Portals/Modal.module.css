@@ -11,7 +11,7 @@
 .modal {
   position: fixed;
   top: 10vh;
-  bottom: 10vh;
+
   left: 5%;
   width: 90%;
   background-color: #f6f6f6;
@@ -21,6 +21,7 @@
   animation: slide-down 300ms ease-out forwards;
   overflow-x: auto;
   padding: 3em;
+  max-height: 80vh;
 }
 
 @media (min-width: 768px) {

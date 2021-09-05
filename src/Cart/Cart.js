@@ -78,10 +78,10 @@ const Cart = (props) => {
       {showActions && actionsModal}
     </Fragment>
   );
-  const isSubmittingModalContent = <p>Sending data ...</p>;
+  const isSubmittingModalContent = <h2>Sending data ...</h2>;
   const didSubmiteModalContent = (
     <Fragment>
-      <p>Successfuly send the order data !</p>
+      <h2>Successfuly send the order data !</h2>
       <div className={styles.actions}>
         <button className={styles["button--close"]} onClick={props.onClose}>
           Close

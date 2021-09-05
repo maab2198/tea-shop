@@ -17,3 +17,11 @@
   font-size: 2rem;
   margin-top: 0;
 }
+
+@media (max-width: 450px) {
+  .summary {
+    width: 100%;
+    margin-bottom: 10vh;
+    margin-top: -35rem;
+  }
+}
